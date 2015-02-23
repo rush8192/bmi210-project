@@ -5,7 +5,7 @@ public class OntClass {
 
 	private String className;
 	private List<OntClass> parents;
-	private List<OntClas> children;
+	private List<OntClass> children;
 
 	public OntClass(String fileContents) {
 
