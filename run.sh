@@ -1,4 +1,9 @@
 
+./build.sh
+if [ $? -ne 0 ]; then
+	exit 1
+fi
+
 cd bin/
 if [ $# -ge 1 ]; then
 	java $@
