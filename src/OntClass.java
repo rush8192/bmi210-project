@@ -1,15 +1,25 @@
 
 import java.util.*;
 
-public class OntClass {
+public abstract class OntClass {
 
-	private String className;
+	protected String className;
 	private List<OntClass> parents;
 	private List<OntClass> children;
 
-	public OntClass(String fileContents) {
-
+	public OntClass(String className) {
+        this.className = className;
+        parents = new ArrayList<OntClass>();
+        children = new ArrayList<OntClass>();
 	}
+
+    void addParent(OntClass parent) {
+        parents.add(parent);
+    }
+    
+    void addChild(OntClass child) {
+        children.add(child);
+    }
 
 	public String getClassName() {
 		return className;
@@ -22,4 +32,6 @@ public class OntClass {
 	public List<OntClass> getChildren() {
 		return children;
 	}
+	
+	public abstract double getMatchScore(String query);
 }

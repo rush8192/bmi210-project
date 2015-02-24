@@ -4,9 +4,11 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-cd bin/
+DATA_DIR="data/"
+
+
 if [ $# -ge 1 ]; then
-	java $@
+	java -cp "bin/" $@
 else
-	java Main "../stub_ontology.ont"
+	java -cp "bin/" Main $DATA_DIR"210-ont.csv" $DATA_DIR"210-dis-symp.csv" $DATA_DIR"210-symp-syn.csv"
 fi

@@ -1,0 +1,54 @@
+symptom,condition,class,import (0-10),frequency (0-10),strength (0-10)
+dizziness,dehydration,non-localized,2,3,3
+headache,dehydration,non-localized,2,3,3
+sleepy,dehydration,non-localized,2,3,3
+thirsty,dehydration,non-localized,2,3,3
+redness of skin,first-degree burn,localized,2,3,3
+swelling,second-degree burn,localized,2,3,3
+blistering,second-degree burn,localized,2,3,3
+waxy skin,third-degree burn,localized,2,3,3
+stiff skin,third-degree burn,localized,2,3,3
+leathery skin,third-degree burn,localized,2,3,3
+blackened skin,fourth-degree burn,major trauma,2,3,3
+nausea,chemical poisoning,poisoning,2,3,3
+drowsiness,chemical poisoning,poisoning,2,3,3
+adominal pain,chemical poisoning,poisoning,2,3,3
+shortness of breath,chemical poisoning,poisoning,2,3,3
+eye irritation,chemical poisoning,poisoning,2,3,3
+headache,chemical poisoning,poisoning,2,3,3
+hypothermia,drug poisoning,poisoning,2,3,3
+coma,drug poisoning,poisoning,2,3,3
+vomiting,drug poisoning,poisoning,2,3,3
+fatigue ,cardiac arrest,circulatory,2,3,3
+chest pain,cardiac arrest,circulatory,2,3,3
+drowsiness,cardiac arrest,circulatory,2,3,3
+dizziness,cardiac arrest,circulatory,2,3,3
+weakness,cardiac arrest,circulatory,2,3,3
+black outs,cardiac arrest,circulatory,2,3,3
+vomiting,cardiac arrest,circulatory,2,3,3
+inflammation,sprain,bone injury,2,3,3
+throbbing,sprain,bone injury,2,3,3
+bruising,sprain,bone injury,2,3,3
+swelling,sprain,bone injury,2,3,3
+low senstitivity,sprain,bone injury,2,3,3
+high sensitivity,fracture,bone injury,2,3,3
+muscle spasms,fracture,bone injury,2,3,3
+inflammation,fracture,bone injury,2,3,3
+swelling,fracture,bone injury,2,3,3
+weight loss,diabetes,chronic disease,2,3,3
+increased hunger,diabetes,chronic disease,2,3,3
+increased thirst,diabetes,chronic disease,2,3,3
+increased urination,diabetes,chronic disease,2,3,3
+muscle tenderness,arthritis,chronic disease,2,3,3
+swelling,arthritis,chronic disease,2,3,3
+joint stiffness,arthritis,chronic disease,2,3,3
+weight loss,arthritis,chronic disease,2,3,3
+muscle pain,arthritis,chronic disease,2,3,3
+extreme coldness,influenza,virus,2,3,3
+fever,influenza,virus,2,3,3
+cough,influenza,virus,2,3,3
+nausal congestion,influenza,virus,2,3,3
+fatigue ,influenza,virus,2,3,3
+headache,influenza,virus,2,3,3
+watering eyes,influenza,virus,2,3,3
+redness of skin,influenza,virus,2,3,3

@@ -1,0 +1,25 @@
+class,superclass,prior probability
+malady,root,1
+symptom,root,1
+emergency,malady,0.6
+non-emergency,malady,0.6
+immediate,non-emergency,0.6
+chronic,non-emergency,0.6
+localized,immediate,0.6
+non-localized,immediate,0.6
+major trauma,emergency,0.6
+circulatory,emergency,0.6
+metabolic,emergency,0.6
+neurological,emergency,0.6
+obstetrics,emergency,0.6
+opthalmological,emergency,0.6
+psychiatric,emergency,0.6
+respiratory,emergency,0.6
+shock,emergency,0.6
+"urological andrologial and gynecologic",emergency,0.6
+poisoning,emergency,0.6
+virus,non-localized,0.6
+bone inury,localized,0.6
+sprain,bone injury,0.6
+broken bone,bone injury,0.6
+influenza,virus,0.6

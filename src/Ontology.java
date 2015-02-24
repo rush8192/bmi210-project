@@ -1,15 +1,8 @@
 
 
-public class Ontology {
+public abstract class Ontology<E extends OntClass> {
 
-
-	final OntClass rootClass;
-
-	public Ontology (String ontologyFile) {
-		rootClass = null;
+	public Ontology (String ontologyFile, String maladyFile, String symptomFile) {
 	}
 
-	public OntClass getRootClass() {
-		return rootClass;
-	}
 }
