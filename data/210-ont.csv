@@ -19,7 +19,7 @@ shock,emergency,0.6
 "urological andrologial and gynecologic",emergency,0.6
 poisoning,emergency,0.6
 virus,non-localized,0.6
-bone inury,localized,0.6
+bone injury,localized,0.6
 sprain,bone injury,0.6
 broken bone,bone injury,0.6
 influenza,virus,0.6

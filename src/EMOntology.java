@@ -5,10 +5,10 @@ import java.util.*;
 public class EMOntology extends Ontology {
     
     public static final String ROOT_CLASS = "root";
-    
     private Malady rootClass;
     
     public HashMap<String, Malady> allMaladies; 
+    public Set<String> allSypmtomNames;
     
     public EMOntology (String ontologyFile, String maladyFile, String symptomFile) {
         super(ontologyFile, maladyFile, symptomFile);
@@ -29,23 +29,55 @@ public class EMOntology extends Ontology {
         }
     }
     
+    public List<MaladyMatch> getTopMatches(Set<QueryTerm> terms, int numMatches) {
+        PriorityQueue<MaladyMatch> sortedMaladies = new PriorityQueue<MaladyMatch>();
+        for (String maladyName : allMaladies.keySet()) {
+            Malady m = allMaladies.get(maladyName);
+            if (m.getChildren().size() == 0) { // only add leaf nodes
+                MaladyMatch match = new MaladyMatch(m, (int)m.getMatchScore(terms));
+                System.out.println("adding malady: " + m.getClassName() + " with score: " + match.matchScore);
+                sortedMaladies.add(match);
+            }
+        }
+        List<MaladyMatch> topMatches = new ArrayList<MaladyMatch>();
+        for (int i = 0; i < numMatches && !sortedMaladies.isEmpty(); i++) {
+            topMatches.add(sortedMaladies.poll());
+        }
+        return topMatches;
+    }
+    
     private void loadMaladySymptoms(List<String> fileContents,
                                     HashMap<String, Symptom> allSymptoms) {
+        allSypmtomNames = new HashSet<String>();
+        allSypmtomNames.addAll(allSymptoms.keySet());
         for (String symptomLine : fileContents) {
             String[] csvComponents = symptomLine.split(",");
             String symptomName = csvComponents[0];
             Symptom symptom = allSymptoms.get(symptomName);
             symptom = new Symptom(symptom, csvComponents);
+            if (!allSypmtomNames.contains(symptom.getName())) {
+                allSypmtomNames.add(symptom.getName());
+            }
             
             String className = csvComponents[1];
             Malady malady = allMaladies.get(className);
             if (malady == null) {
-                System.out.println("Unknown malady: " + className);
-                continue;
+                malady = Malady.fromSymptomLine(csvComponents);
+                String parentN = csvComponents[2];
+                Malady parent = allMaladies.get(parentN);
+                if (parent == null) {
+                    System.out.println("unknown parent: " + parentN + " for: " + className);
+                    continue;
+                }
+                allMaladies.put(malady.getClassName(), malady);
+                parent.addChild(malady);
+                malady.addParent(parent);
+                
             }
             malady.addSymptom(symptom);
             System.out.println("Malady: " + malady.getClassName() 
-                + " now has n symptoms: " + malady.getSymptons().size());
+                + " now has n symptoms: " + malady.getSymptons().size()
+                + " including: " + symptom.getName());
         }
     }
     

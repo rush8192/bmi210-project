@@ -7,6 +7,8 @@ public abstract class OntClass {
 	private List<OntClass> parents;
 	private List<OntClass> children;
 
+    public OntClass() {}
+
 	public OntClass(String className) {
         this.className = className;
         parents = new ArrayList<OntClass>();
@@ -33,5 +35,5 @@ public abstract class OntClass {
 		return children;
 	}
 	
-	public abstract double getMatchScore(String query);
+	public abstract double getMatchScore(Set<QueryTerm> query);
 }

@@ -19,7 +19,7 @@ headache,chemical poisoning,poisoning,2,3,3
 hypothermia,drug poisoning,poisoning,2,3,3
 coma,drug poisoning,poisoning,2,3,3
 vomiting,drug poisoning,poisoning,2,3,3
-fatigue ,cardiac arrest,circulatory,2,3,3
+fatigue,cardiac arrest,circulatory,2,3,3
 chest pain,cardiac arrest,circulatory,2,3,3
 drowsiness,cardiac arrest,circulatory,2,3,3
 dizziness,cardiac arrest,circulatory,2,3,3
@@ -48,7 +48,7 @@ extreme coldness,influenza,virus,2,3,3
 fever,influenza,virus,2,3,3
 cough,influenza,virus,2,3,3
 nausal congestion,influenza,virus,2,3,3
-fatigue ,influenza,virus,2,3,3
+fatigue,influenza,virus,2,3,3
 headache,influenza,virus,2,3,3
 watering eyes,influenza,virus,2,3,3
 redness of skin,influenza,virus,2,3,3

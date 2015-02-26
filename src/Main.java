@@ -1,4 +1,5 @@
 
+import java.util.*;
 
 public class Main {
 
@@ -12,6 +13,18 @@ public class Main {
 			Malady m = maladyOntology.getRootClass();
 			System.out.println(m.getClassName());
 			System.out.println(maladyOntology);
+			
+			while (true) {
+			    String query = System.console().readLine("input a list of symptoms: ");
+			    System.out.println("");
+			    Set<QueryTerm> queryTerms =
+			        QueryTerm.fromInputString(query, maladyOntology.allSypmtomNames);
+			    List<MaladyMatch> matches = maladyOntology.getTopMatches(queryTerms, 5);
+                System.out.println("");
+			    System.out.println("Top match is : " + matches.get(0).malady.getClassName()
+			        + " with score: " + matches.get(0).matchScore);
+			    System.out.println("");
+			}
 		}
 	}
 
