@@ -1,25 +1,140 @@
-class,superclass,prior probability
-malady,root,1
-symptom,root,1
-emergency,malady,0.6
-non-emergency,malady,0.6
-immediate,non-emergency,0.6
-chronic,non-emergency,0.6
-localized,immediate,0.6
-non-localized,immediate,0.6
-major trauma,emergency,0.6
-circulatory,emergency,0.6
-metabolic,emergency,0.6
-neurological,emergency,0.6
-obstetrics,emergency,0.6
-opthalmological,emergency,0.6
-psychiatric,emergency,0.6
-respiratory,emergency,0.6
-shock,emergency,0.6
-"urological andrologial and gynecologic",emergency,0.6
-poisoning,emergency,0.6
-virus,non-localized,0.6
-bone injury,localized,0.6
-sprain,bone injury,0.6
-broken bone,bone injury,0.6
-influenza,virus,0.6
+class,superclass,prior probability,treatments
+malady,root,1,
+emergency,malady,0.3,Call 911 immediately.
+cardiac arrest,emergency,0.5,Person needs to be treated with a defibrillator right away
+poisoning,malady,0.5,Call the American Association of Poison Control Centers: 1 (800) 222-1222
+botanical poisoning,poisoning,0.5,"Wash the skin thoroughly with soap and warm water. Because the plant oil enters skin quickly, try to wash it off within 30 minutes. Scrub under the fingernails with a brush to prevent the plant oil from spreading to other parts of the body. Wash clothing and shoes with soap and hot water. The plant oils can linger on them. Immediately bathe animals to remove the oils from their fur. Body heat and sweating can aggravate the itching. Stay cool and apply cool compresses to your skin. Calamine lotion and hydrocortisone cream can be applied to the skin to reduce itching and blistering. Bathing in lukewarm water with an oatmeal bath product, available in drugstores, may soothe itchy skin. Aluminum acetate (Domeboro solution) soaks can help to dry the rash and reduce itching. If creams, lotions, or bathing do not stop the itching, antihistamines may be helpful. In severe cases, especially for a rash around the face or genitals, the health care provider may prescribe steroids, taken by mouth or given by injection. Wash tools and other objects with a dilute bleach solution or rubbing alcohol."
+hemlock poisoning,botanical poisoning,0.5,
+wild cherry poisoning,botanical poisoning,0.2,
+wild cherry poisoning,emergency,0.2,
+moonseed poisoning,emergency,0.3,
+moonseed poisoning,botanical poisoning,0.3,
+mistle toe poisoning,botanical poisoning,0.4,
+mistle toe poisoning,emergency,0.4,
+mushroom poisoning,botanical poisoning,0.3,
+mushroom poisoning,emergency,0.3,
+chemical poisoning,poisoning,0.5,"Continuously monitor the vital signs and body's systems of the patient. For anything out of the ordinary, call a doctor"
+drug poisoning,poisoning,0.2,
+carbon monoxide poisoning,chemical poisoning,0.2,"Get the person to fresh air (away from the carbon monoxide area), then call 911. If the person is not breathing normally, perform CPR."
+carbon monoxide poisoning,emergency,0.2,
+salmonella poisoning,poisoning,0.4,"Most people recover without treatment. If diarrhea and dehydration become severe, then go to the hospital."
+virus,malady,0.5,"Recovery without treatment is possible. However, if any symptoms become severe and highly uncomfortable, seek out antibiotics from a doctor"
+bone injury,malady,0.5,
+sprain,bone injury,0.5,"Use the RICE approach: R: Rest— take stress off the injury, I: Ice—snow or a cold stream are great field alternatives that help reduce swelling and inflammation, C: Compression— to reduce swelling, E: Elevation—place injured limb above the heart to reduce swelling"
+sprained ankle,sprain,0.6,
+sprained finger,sprain,0.5,
+sprained wrist,sprain,0.5,
+sprained arm,sprain,0.5,
+sprained knee,sprain,0.5,
+bone fracture,bone injury,0.5,Limit all movement of the injured area until a doctor can accurately determine if a cast or surgery is necessary.
+localized injury,malady,0.5
+broken leg,bone fracture,0.5,
+broken ankle,bone fracture,0.5,
+broken finger,bone fracture,0.5,
+broken arm,bone fracture,0.5,
+broken wrist,bone fracture,0.5,
+broken skull,bone fracture,0.5,
+broken collarbone,bone fracture,0.5,
+broken foot,bone fracture,0.5,
+broken hip,bone fracture,0.3,
+broken pelvis,bone fracture,0.3,
+stress fracture,bone fracture,0.5,
+broken fibula,broken leg,0.5,
+broken tibia,broken leg,0.5,
+broken femur,broken leg,0.5,
+broken ulna,broken arm,0.5,
+broken radius,broken arm,0.5,
+broken humerus,broken arm,0.5,
+ankle injury,localized injury,0.7,
+broken ankle,ankle injury,0.7,
+sprained ankle,ankle injury,0.7,
+arm injury,localized injury,0.7,
+broken arm,arm injury,0.5,
+sprained arm,arm injury,0.5,
+finger injury,localized injury,0.7,
+broken finger,finger injury,0.5,
+sprained finger,finger injury,0.5,
+leg injury,localized injury,0.7,
+broken leg,leg injury,0.5,
+wrist injury,localized injury,0.7,
+broken wrist,wrist injury,0.7,
+sprained wrist,wrist injury,0.7,
+head injury,localized injury,0.7,
+broken skull,head injury,0.5,
+back injury,localized injury,0.7,
+broken collarbone,back injury,0.5,
+hip injury,localized injury,0.7,
+broken hip,hip injury,0.5,
+foot injury,localized injury,0.7,
+broken foot,foot injury,0.5,
+knee injury,localized injury,0.7,
+broken knee,knee injury,0.5,
+sprained knee,knee injury,0.7,
+pelvis injury,localized injury,0.7,
+broken pelvis,pelvis injury,0.5,
+abdomen injury,localized injury,0.7,
+shoulder injury,localized injury,0.7,
+skin irritation,malady,0.8,Apply lotion to calm the irritated area.
+cold related malady,malady,0.5,
+heat related malady,malady,0.5,
+burn,skin irritation,0.6,"Cool the burned area with moist, clean, cool cloths. Rinse with tap water, and clean with soap and water. Pain may be relieved with 1-2 acetaminophen (Tylenol) every 4 hours or 1-2 ibuprofen (Advil, Motrin) every 6-8 hours. Apply a layer of silver sulfadiazine cream (Silvadene) morning and evening. (Do not use Silvadene near the eyes.) Cover with gauze dressings. Clean off all Silvadene cream with soap and water with each dressing change. Blisters may rupture; remove the dead skin with sterile scissors and tweezers."
+burn,heat related malady,0.5,
+sunburn,burn,0.7,Try to remove victim from all sun exposure.
+first-degree burn,burn,0.6,
+second-degree burn,burn,0.5,
+third-degree burn,burn,0.4,
+fourth-degree burn,burn,0.2,
+fourth-degree burn,emergency,0.2,
+rash,skin irritation,0.8,
+heat rash,rash,0.6,Clean the patient's skin and clothing and give ibuprofen or naproxen for a few days until the rash clears.
+heat rash,heat related malady,0.5,
+botanical rash,rash,0.5,
+poison ivy,botanical rash,0.9,
+sumac rash,botanical rash,0.6,
+poison oak,botanical rash,0.9,
+bite,skin irritation,0.6,
+bug bite,bite,0.6,
+mosquito bite,bug bite,0.7,"It’s tough advice, but the best thing you can do is not scratch the bite. Scratching can create an opening in your skin that can allow bacteria in and cause infection.To relieve itch and reduce risk of infection: Wash the area with soap and water, apply calamine lotion or anti-itch cream, put an ice pack on the bite, take an over-the-counter antihistamine."
+snake or lizard bite,bite,0.4,"If you think the snake bite is an emergency, call 911. If you are not sure what type of snake or lizard bit you, call a Poison Control Center immediately to help identify the snake or lizard and find out what to do next, and take a picture of it. But do not do take a picture if it will delay treatment or put someone at risk for more bites. Do not waste time or take any risks trying to kill or bring in the snake. Only trap a poisonous snake if the chances are good that it will bite more people if you let it go. It is important to remember that a snake only injects part of its venom with each bite, so it can still hurt you after the first strike. And a dead snake, even one with a severed head, can bite and release venom by reflex action for up to 90 minutes after it dies. Medicine (antivenom) to counteract the effects of the poison can save a limb or your life. Antivenom is given as soon as a doctor determines it is needed, usually within the first 4 hours after the snakebite. Antivenom may be effective up to 2 weeks or more after a snakebite. Remove any jewelry. The limbs might swell, making it harder to remove the jewelry after swelling begins."
+spider bite,bug bite,0.4,"If you think the spider bite is an emergency, call 911. If you are not sure what type of spider bit you, call a Poison Control Center immediately to help identify the spider and find out what to do next, and take a picture of it. But do not do take a picture if it will delay treatment or put someone at risk for more bites. Remove any jewelry. The limbs might swell, making it harder to remove the jewelry after swelling begins. Medicine (antivenom) to counteract the effects of the poison can save a limb or your life. Antivenom is given as soon as a doctor determines it is needed, usually within the first 4 hours after the snakebite."
+open wound,skin irritation,0.5,
+mild cut,open wound,0.5,Apply pressure to stop the bleeding. Wash the cut with clean water to avoid infection
+severe cut,open wound,0.3,"Scrub the wound with soap and a gauze pad or bandanna, making sure to remove all debris. Rinse off all of the soap, then apply a layer of antibiotic ointment to a gauze pad and tape it in place. The pad should completely cover the wound."
+severe cut,emergency,0.5,
+bee sting,skin irritation,0.8,"If stung by a bee, immediately remove the stinger and venom sac, if attached, by scraping with a fingernail or a knife blade. Do not squeeze or grasp the stinger or venom sac, as squeezing will force more venom into the wound. Wash the sting site thoroughly with soap and water to lessen the chance of a secondary infection. Relieve the itching and discomfort caused by insect bites by applying: cold compresses, a cooling paste of mud and ashes, sap from dandelions, coconut meat, crushed cloves of garlic, or onion."
+skin chafing,skin irritation,0.6,
+heat exhaustion,heat related malady,0.4,"Get out of the heat and rest, drink plenty of fluid, remove any restrictive clothing, apply cooling measures such as ice towels and submergence in cold water sources"
+waterborne disease,malady,0.5,
+giardia,waterborne disease,0.3,Seek help from a doctor in order to obtain appropriate antibiotics
+blister,skin irritation,0.8,"Clean well with an antiseptic wipe. Sterilize the point of a pin or knife with flame or an alcohol swab and gently pierce the blister. Massage the fluid out, leaving the roof of the blister intact. Cover with a friction-reducing dressing, or cut a donut-shaped piece of moleskin and place it over the blister. Fill the hole with antibiotic ointment and cover the moleskin with athletic or duct tape."
+bruise,malady,0.8,"No treatment required, avoid applying pressure to the injured area"
+dental,malady,0.4,
+toothache,dental,0.3,"Rinse your mouth with a solution of half a teaspoon of salt and eight ounces of water several times a day. If pain, sensitivity to hot and cold, and swelling exist, get to a doctor–it could be an abcess."
+broken tooth,dental,0.3,"Rinse the tooth thoroughly with drinking water, then protect the sensitive nerve by placing a chewed piece of gum over the break. Apply a cold-water bladder to the patient’s cheek to reduce swelling, and take ibuprofen for the pain. Hike out to your dentist. "
+cold related malady,malady,0.5,
+snow blindness,cold related malady,0.5,"First, don’t let the patient rub his eyes; it could further damage the corneas. Give ibuprofen for the pain, apply a cold compress, and cover eyes with gauze. Wear sunglasses and stay in a dark environment until vision returns to normal (usually in about 18 hours)."
+hypothermia,cold related malady,0.4,"Get the patient into warm, dry clothes and place him in a sheltered area–such as in a sleeping bag, inside of a tent. (Don’t have a tent? Protect him from the elements by wrapping the sleeping bag in a tarp, plastic sheet, or garbage bags.) Give water and simple sugars, such as hot chocolate or candy, to generate quick body heat. For more advanced cases, build a fire nearby and put the patient in a ""hypothermia wrap:"" Start with a sleeping pad, put a zipped sleeping bag on top, then lay the patient (in a second sleeping bag) on that. Give him a hot-water bottle wrapped in clothing to hold in his hands. Put another sleeping bag on top, then wrap it all, burrito-style, in a tarp or plastic sheet. "
+mild hypothermia,hypothermia,0.5,"Get to a sheltered spot. Remove any wet clothing immediately and get the victim warm, especially cover head with warm cap. You may need to start a fire, set up a tent or get the victim into a sleeping bag insulated from the ground. Give hot tea or soup until victim stops shivering, is warm and stabilized. Then, depending on conditions, decide whether to make camp, move on, or go back. Keep in mind that others in your party may be cold, too, and that standing around will invite hypothermia for them."
+severe hypothermia,hypothermia,0.2,"The victim's core temp will have dropped to 90* F or below. Shivering will have stopped on its own, and that is the last protective measurement the body has. While two hearty persons go for help with notes on your position and problem written on paper, do all of the above. Also pour very warm water into several water bottles and put in bag with victim, and prepare to have a warm and healthy body strip down and crawl into the sleeping bag with the victim. If the victim is conscious give hot tea, water or soup."
+severe hypothermia,emergency,0.2,
+frostbite,cold related malady,0.4,"Try to apply heat to the infected area. If the skin does not seem to warm, if it remains numb, or if it does blister or swell, seek immediate medical attention"
+altitude sickness,malady,0.5,"Give the person spaces to breathe and provide oxygen if possible. In addtion, keep the person warm, enable him/her to rest, give him/her fluids, provide Tylenol or Advil for a headache"
+severe altitude sickness,altitude sickness,0.3,
+severe altitude sickness,emergency,0.3,
+bubonic plague,emergency,0.1,"Isolate the patient, as this is a contagious condition. Get to a medical provider immediately to obtain a prescription for antibiotics."
+allergic reaction,skin irritation,0.6,
+severe allergic reaction,allergic reaction,0.3,
+severe allergic reaction,emergency,0.3,
+lyme disease,malady,0.3,"In its early stages, Lyme disease can be effectively treated with antibiotics. In general, the sooner such therapy is begun following infection, the quicker and more complete the recovery. Antibiotics, such as doxycycline or amoxicillin taken orally for two to four weeks, can speed the healing of the rash and can usually prevent subsequent symptoms such as arthritis or neurological problems. There is no compelling evidence that prolonged antibiotic therapy is more effective than two weeks of therapy. Prolonged antibiotic use may have serious side effects."
+malaria,emergency,0.2,
+appendicitis,emergency,0.2,
+necrotizing fasciitis,emergency,0.2,
+subdural hematoma,emergency,0.2,
+asphyxia,emergency,0.2,Use Cardio-Pulmonary Rescuscitation (CPR) or Expired Air Rescuscitation (EAR).
+smoke inhalation,emergency,0.2,"Remove the person with smoke inhalation from the scene to a location with clean air. If necessary, CPR should be initiated by trained bystanders until emergency medical help arrives"
+anaphylaxis,emergency,0.2,"Get the person in a comfortable position and elevate his or her legs. Check the person's pulse and breathing and, if necessary, administer CPR or other first-aid measures. Give medications to treat an allergy attack, such as an epinephrine autoinjector or antihistamines, if the person has them."
+hypovolemic shock,emergency,0.3,"Get immediate medical help. In the meantime: keep the person comfortable and warm (to avoid hypothermia), have the person lie flat with the feet lifted about 12 inches to increase circulation (however, if the person has a head, neck, back, or leg injury, do not change the person's position unless he or she is in immediate danger), do not give fluids by mouth."
+septic shock,emergency,0.2,
+pulmonary edema from high altitude (HAPE),malady,0.2,"The treatment of high-altitude pulmonary edema (HAPE) includes rest, administration of oxygen, and descent to a lower altitude. If diagnosed early, recovery is rapid with a descent of only 500-1000 m. A portable hyperbaric chamber or supplemental oxygen administration immediately increases oxygen saturation and reduces pulmonary artery pressure, heart rate, respiratory rate, and symptoms. In situations where descent is difficult, these treatments can be lifesaving."
+rabies,malady,0.4,"Whether in an urban or wilderness setting, prophylaxis of a suspected rabies exposure should begin with good wound management, focusing on immediate cleansing of the wound with soap and water as thoroughly as possible and with application of a virucial antiseptic such as povidone iodine or alcohol."
+dehydration,malady,0.9,"Stop your activity and rest. Get out of direct sunlight and lie down in a cool spot, such as in the shade or an air-conditioned area. Drink a rehydration drink, water, juice, or sports drink to replace fluids and minerals. Drink 2 qt (2 L) of cool liquids over the next 2 to 4 hours. You should drink at least 10 glasses of liquid a day to replace lost fluids."

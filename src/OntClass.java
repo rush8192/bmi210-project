@@ -34,6 +34,4 @@ public abstract class OntClass {
 	public List<OntClass> getChildren() {
 		return children;
 	}
-	
-	public abstract double getMatchScore(Set<QueryTerm> query);
 }

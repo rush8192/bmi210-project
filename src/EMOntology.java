@@ -8,7 +8,7 @@ public class EMOntology extends Ontology {
     private Malady rootClass;
     
     public HashMap<String, Malady> allMaladies; 
-    public Set<String> allSypmtomNames;
+    public HashMap<String, Integer> allImportScores;
     
     public EMOntology (String ontologyFile, String maladyFile, String symptomFile) {
         super(ontologyFile, maladyFile, symptomFile);
@@ -29,13 +29,14 @@ public class EMOntology extends Ontology {
         }
     }
     
+    // Returns a sorted list of the top N matching maladies for the given query terms
     public List<MaladyMatch> getTopMatches(Set<QueryTerm> terms, int numMatches) {
         PriorityQueue<MaladyMatch> sortedMaladies = new PriorityQueue<MaladyMatch>();
         for (String maladyName : allMaladies.keySet()) {
             Malady m = allMaladies.get(maladyName);
             if (m.getChildren().size() == 0) { // only add leaf nodes
-                MaladyMatch match = new MaladyMatch(m, (int)m.getMatchScore(terms));
-                System.out.println("adding malady: " + m.getClassName() + " with score: " + match.matchScore);
+                MaladyMatch match = new MaladyMatch(m, terms);
+                //System.out.println("adding malady: " + m.getClassName() + " with score: " + match.matchScore);
                 sortedMaladies.add(match);
             }
         }
@@ -46,22 +47,26 @@ public class EMOntology extends Ontology {
         return topMatches;
     }
     
+    // loads all the symptoms for all maladies, using the synonyms 
     private void loadMaladySymptoms(List<String> fileContents,
                                     HashMap<String, Symptom> allSymptoms) {
-        allSypmtomNames = new HashSet<String>();
-        allSypmtomNames.addAll(allSymptoms.keySet());
+        allImportScores = new HashMap<String, Integer>();
         for (String symptomLine : fileContents) {
             String[] csvComponents = symptomLine.split(",");
             String symptomName = csvComponents[0];
             Symptom symptom = allSymptoms.get(symptomName);
             symptom = new Symptom(symptom, csvComponents);
-            if (!allSypmtomNames.contains(symptom.getName())) {
-                allSypmtomNames.add(symptom.getName());
+            
+            for (String sympName : symptom.getAllNames()) {
+                allImportScores.put(sympName, symptom.importPenalty());
             }
             
             String className = csvComponents[1];
             Malady malady = allMaladies.get(className);
             if (malady == null) {
+                System.out.println("Unknown malady: " + className);
+                if (0 == 0)
+                    continue;
                 malady = Malady.fromSymptomLine(csvComponents);
                 String parentN = csvComponents[2];
                 Malady parent = allMaladies.get(parentN);
@@ -75,12 +80,13 @@ public class EMOntology extends Ontology {
                 
             }
             malady.addSymptom(symptom);
-            System.out.println("Malady: " + malady.getClassName() 
-                + " now has n symptoms: " + malady.getSymptons().size()
-                + " including: " + symptom.getName());
+            //System.out.println("Malady: " + malady.getClassName() 
+            //    + " now has n symptoms: " + malady.getSymptons().size()
+            //    + " including: " + symptom.getName());
         }
     }
     
+    // loads all synonyms and their symptoms
     private HashMap<String, Symptom> loadSymptoms(List<String> fileContents) {
         HashMap<String, Symptom> allSymptoms = new HashMap<String, Symptom>();
         // read in all symptoms and their synonyms
@@ -97,6 +103,8 @@ public class EMOntology extends Ontology {
         return allSymptoms;
     }
     
+    // Loads the ontology structure. Creates all classes on the first pass
+    // and then links them in parent/child structure on the second pass
     private void loadOntology(List<String> fileContents) {
         this.allMaladies = new HashMap<String, Malady>();
         // set root node
@@ -122,6 +130,7 @@ public class EMOntology extends Ontology {
         }
     }
     
+    // turns a file into a list of strings for later parsing
     private List<String> readFile(String file) throws Exception {
         ArrayList<String> lines = new ArrayList<String>();
         BufferedReader rd = new BufferedReader(new FileReader(file));
@@ -136,6 +145,7 @@ public class EMOntology extends Ontology {
         return rootClass;
     }
     
+    // Outputs a basic string representation of the ontology
     public String toString() {
         StringBuilder str = new StringBuilder();
         int level = 0;

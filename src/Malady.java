@@ -3,9 +3,10 @@ import java.util.*;
 
 public class Malady extends OntClass {
 
-    private Set<Symptom> symptoms;
+    Set<Symptom> symptoms;
     private Set<Symptom> inheritedSymptoms;
     private double priorProbability;
+    public String treatment;
 
     public Malady() {}
 
@@ -15,10 +16,20 @@ public class Malady extends OntClass {
         String[] csvComponents = line.split(",");
         this.className = csvComponents[0];
         inheritedSymptoms = null;
-        if (csvComponents.length == 3)
+        if (csvComponents.length >= 3)
             priorProbability = Double.parseDouble(csvComponents[2]);
         else
             priorProbability = 0.0;
+            
+        if (csvComponents.length >= 4) {
+            String[] treatments = Arrays.copyOfRange(csvComponents, 3, csvComponents.length);
+            treatment = "";
+            for (String t : treatments) {
+                treatment += t + ",";
+            }
+            treatment = treatment.substring(0, treatment.length() - 1);
+        } else
+            treatment = null;
     }
     
     public static Malady fromSymptomLine(String[] symptomLine) {
@@ -43,21 +54,28 @@ public class Malady extends OntClass {
         symptoms.add(s);
     }
     
-    public double getMatchScore(Set<QueryTerm> query) {
-        Set<Symptom> allSymptoms = new HashSet<Symptom>();
-        allSymptoms.addAll(inheritedSymptoms());
-        allSymptoms.addAll(symptoms);
-        int totalMaxScore = Symptom.MAX_SCORE*allSymptoms.size();
-        int evokeS = 0;
-        int unevokedScore = 0;
-        for (Symptom symp : allSymptoms) {
-            if (symp.matchesQuery(query)) {
-                evokeS += symp.evokedScore();
-            } else {
-                unevokedScore += symp.frequencyPenalty();
+    public String getTreatments() {
+        String treatments = "";
+        Set<OntClass> current = new HashSet<OntClass>();
+        current.add(this);
+        while (true) {
+            Set<OntClass> next = new HashSet<OntClass>();
+            for (OntClass classObj : current) {
+                Malady malady = (Malady)classObj;
+                if (malady.treatment != null && !"".equals(malady.treatment))
+                    treatments += " " + malady.treatment + ",";
+                next.addAll(malady.getParents());
             }
+            // root's only parent is itself, so if next==current we have
+            // reached the root node
+            if (next.equals(current)) {
+                break;
+            }
+            current = next;
         }
-        return priorProbability*(evokeS - unevokedScore);
+        if (treatments.length() > 0 && treatments.charAt(treatments.length() - 1) == ',')
+            treatments = treatments.substring(0, treatments.length() - 1);
+        return treatments;
     }
     
     Set<Symptom> inheritedSymptoms() {

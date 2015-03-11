@@ -1,5 +1,7 @@
 symptom,synonym
 dizziness,faintness
+drowsiness,drowsy
+red skin,redness of skin
 tired,exhausted
 sleepy,tired
 swelling,bulge
@@ -8,3 +10,22 @@ shortness of breath,wheezing
 fatigue,tired
 fainting,blackouts
 hypothermia,extreme coldness
+fracture,broken
+broken,break
+skull,head
+clavical,collarbone
+stomach,abdominal
+abdominal,abdomen
+back,spine
+bug,insect
+abrasion,scrape
+blood,bleeding
+itchy,itchiness
+friction,rubbing
+butt,glutes
+stomach ache,stomach cramps
+stomach cramps,adominal cramps
+nausea,stomach ache
+nausea,upset stomache
+blistering,blister
+blister,blisters

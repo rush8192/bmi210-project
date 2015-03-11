@@ -31,9 +31,9 @@ public class Symptom {
         }
         if (!synonyms.contains(line[0]))
             synonyms.add(line[0]);
-        importN = Integer.parseInt(line[3]);
-        frequencyN = Integer.parseInt(line[4]);
-        evokeN = Integer.parseInt(line[5]);
+        importN = Integer.parseInt(line[2]);
+        frequencyN = Integer.parseInt(line[3]);
+        evokeN = Integer.parseInt(line[4]);
     }
     
     public int evokedScore() {
@@ -57,6 +57,10 @@ public class Symptom {
         return frequencyN;
     }
     
+    public int importPenalty() {
+        return importN;
+    }
+    
     public Symptom mergeWith(Symptom other) {
         for (String syn : synonyms) {
             if (!synonyms.contains(syn))
@@ -74,14 +78,36 @@ public class Symptom {
         return synonyms.get(0);
     }
     
-    public boolean matchesQuery(Set<QueryTerm> query) {
+    public String toString() {
+        String finalS = "";
+        for (int i = 0; i < synonyms.size(); i++) {
+            finalS += synonyms.get(i);
+            if (i != synonyms.size() - 1)
+                finalS += ", ";
+            if (i == synonyms.size() - 2)
+                finalS += "or ";
+        }
+        return finalS;
+    }
+    
+    @Override
+    public boolean equals(Object other) {
+        return ((Symptom)other).synonyms.equals(this.synonyms);
+    }
+    
+    @Override
+    public int hashCode() {
+        return synonyms.hashCode();
+    }
+    
+    public QueryTerm matchesQuery(Set<QueryTerm> query) {
         for (QueryTerm term : query) {
             for (String synonym : synonyms) {
                 if (term.matches(synonym)) {
-                    return true;
+                    return term;
                 }
             }
         }
-        return false;
+        return null;
     }
 }

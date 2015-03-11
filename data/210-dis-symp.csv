@@ -1,54 +1,412 @@
-symptom,condition,class,import (0-10),frequency (0-10),strength (0-10)
-dizziness,dehydration,non-localized,2,3,3
-headache,dehydration,non-localized,2,3,3
-sleepy,dehydration,non-localized,2,3,3
-thirsty,dehydration,non-localized,2,3,3
-redness of skin,first-degree burn,localized,2,3,3
-swelling,second-degree burn,localized,2,3,3
-blistering,second-degree burn,localized,2,3,3
-waxy skin,third-degree burn,localized,2,3,3
-stiff skin,third-degree burn,localized,2,3,3
-leathery skin,third-degree burn,localized,2,3,3
-blackened skin,fourth-degree burn,major trauma,2,3,3
-nausea,chemical poisoning,poisoning,2,3,3
-drowsiness,chemical poisoning,poisoning,2,3,3
-adominal pain,chemical poisoning,poisoning,2,3,3
-shortness of breath,chemical poisoning,poisoning,2,3,3
-eye irritation,chemical poisoning,poisoning,2,3,3
-headache,chemical poisoning,poisoning,2,3,3
-hypothermia,drug poisoning,poisoning,2,3,3
-coma,drug poisoning,poisoning,2,3,3
-vomiting,drug poisoning,poisoning,2,3,3
-fatigue,cardiac arrest,circulatory,2,3,3
-chest pain,cardiac arrest,circulatory,2,3,3
-drowsiness,cardiac arrest,circulatory,2,3,3
-dizziness,cardiac arrest,circulatory,2,3,3
-weakness,cardiac arrest,circulatory,2,3,3
-black outs,cardiac arrest,circulatory,2,3,3
-vomiting,cardiac arrest,circulatory,2,3,3
-inflammation,sprain,bone injury,2,3,3
-throbbing,sprain,bone injury,2,3,3
-bruising,sprain,bone injury,2,3,3
-swelling,sprain,bone injury,2,3,3
-low senstitivity,sprain,bone injury,2,3,3
-high sensitivity,fracture,bone injury,2,3,3
-muscle spasms,fracture,bone injury,2,3,3
-inflammation,fracture,bone injury,2,3,3
-swelling,fracture,bone injury,2,3,3
-weight loss,diabetes,chronic disease,2,3,3
-increased hunger,diabetes,chronic disease,2,3,3
-increased thirst,diabetes,chronic disease,2,3,3
-increased urination,diabetes,chronic disease,2,3,3
-muscle tenderness,arthritis,chronic disease,2,3,3
-swelling,arthritis,chronic disease,2,3,3
-joint stiffness,arthritis,chronic disease,2,3,3
-weight loss,arthritis,chronic disease,2,3,3
-muscle pain,arthritis,chronic disease,2,3,3
-extreme coldness,influenza,virus,2,3,3
-fever,influenza,virus,2,3,3
-cough,influenza,virus,2,3,3
-nausal congestion,influenza,virus,2,3,3
-fatigue,influenza,virus,2,3,3
-headache,influenza,virus,2,3,3
-watering eyes,influenza,virus,2,3,3
-redness of skin,influenza,virus,2,3,3
+symptom,condition,import (0-10),frequency (0-10),strength (0-10)
+emergency,emergency,1,1,10
+urgent,emergency,1,1,9
+dizziness,dehydration,5,5,5
+headache,dehydration,5,5,5
+sleepy,dehydration,5,5,5
+thirsty,dehydration,5,7,6
+irritation,skin irritation,5,5,5
+skin,skin irritation,5,5,5
+cold,cold related malady,8,8,8
+heat,heat related malady,8,8,8
+burn,burn,8,8,8
+sun,sunburn,5,8,5
+redness of skin,first-degree burn,5,5,5
+dry skin,first-degree burn,5,5,5
+painful,first-degree burn,5,5,5
+localized pain,first-degree burn,5,5,5
+redness of skin,second-degree burn,5,5,5
+painful,second-degree burn,5,5,5
+yellow skin,second-degree burn,5,5,5
+white skin,second-degree burn,5,5,5
+moist skin,second-degree burn,5,5,5
+blistering,second-degree burn,5,5,5
+waxy skin,third-degree burn,5,5,5
+brown skin,third-degree burn,5,5,5
+white skin,third-degree burn,5,5,5
+stiff skin,third-degree burn,5,5,5
+leathery skin,third-degree burn,5,5,5
+painless,third-degree burn,5,5,5
+leathery skin,fourth-degree burn,5,5,5
+painless,fourth-degree burn,5,5,5
+blackened skin,fourth-degree burn,5,5,5
+nausea,poisoning,5,5,5
+drowsiness,poisoning,5,5,5
+adominal pain,chemical poisoning,5,5,5
+shortness of breath,chemical poisoning,5,5,5
+eye irritation,chemical poisoning,5,2,5
+headache,chemical poisoning,5,5,5
+hypothermia,drug poisoning,5,5,5
+coma,drug poisoning,5,5,5
+vomiting,drug poisoning,5,5,5
+diarrhea,salmonella poisoning,5,5,5
+fever,salmonella poisoning,5,5,5
+abdominal cramps,salmonella poisoning,5,5,5
+dehydration,salmonella poisoning,5,5,5
+plant,botanical poisoning,8,8,8
+ingest,hemlock poisoning,5,5,5
+increased saliva,hemlock poisoning,5,5,5
+burning of digestive tract,hemlock poisoning,5,5,5
+muscle pain,hemlock poisoning,5,5,5
+muscle swelling,hemlock poisoning,5,5,5
+muscle stiffening,hemlock poisoning,5,5,5
+paralysis,hemlock poisoning,5,5,5
+loss of speech,hemlock poisoning,5,5,6
+cherry,wild cherry poisoning,8,8,8
+ingest,wild cherry poisoning,5,5,5
+gasping,wild cherry poisoning,5,5,5
+excited,wild cherry poisoning,5,5,5
+increased heart rate,wild cherry poisoning,5,5,5
+prostration,wild cherry poisoning,5,5,5
+seed,moonseed poisoning,7,7,5
+blue lips,moonseed poisoning,5,5,5
+purple lips,moonseed poisoning,5,5,5
+berries,mistle toe poisoning,5,5,5
+ingest,mistle toe poisoning,5,5,5
+bright colors,mushroom poisoning,5,5,5
+mushroom,mushroom poisoning,8,8,8
+bad taste,mushroom poisoning,5,5,5
+stomach ache,mushroom poisoning,5,5,5
+vomiting,mushroom poisoning,5,5,5
+nausea,mushroom poisoning,5,5,5
+fatigue ,cardiac arrest,5,5,5
+chest pain,cardiac arrest,8,8,10
+drowsiness,cardiac arrest,5,5,5
+dizziness,cardiac arrest,5,5,5
+weakness,cardiac arrest,5,5,5
+black outs,cardiac arrest,5,5,5
+vomiting,cardiac arrest,5,5,5
+arm,arm injury,10,8,10
+leg,leg injury,10,8,10
+finger,finger injury,10,8,10
+wrist,wrist injury,10,8,10
+ankle,ankle injury,10,8,10
+head,head injury,10,8,10
+abdomen,abdomen injury,10,8,10
+back,back injury,10,8,10
+foot,foot injury,10,8,10
+shoulder,shoulder injury,10,8,10
+knee,knee injury,10,8,10
+hip,hip injury,10,8,10
+pelvis,pelvis injury,10,8,10
+inflammation,bone injury,5,5,5
+throbbing,bone injury,5,5,5
+bruising,bone injury,5,5,5
+swelling,bone injury,5,5,5
+muscle spasms,bone injury,5,5,5
+immobility,bone fracture,5,5,8
+high sensitivity,bone fracture,5,5,5
+heat,sprain,5,5,5
+redness,sprain,5,5,5
+decreased mobility,sprain,5,5,7
+femur,broken femur,2,2,10
+upper,broken femur,5,5,5
+tibia,broken tibia,2,2,10
+lower,broken tibia,5,5,5
+fibula,broken fibula,2,2,10
+lower,broken fibula,5,5,5
+extreme coldness,virus,5,5,5
+fever,virus,5,5,5
+cough,virus,5,5,5
+nausal congestion,virus,5,5,5
+fatigue,virus,5,5,5
+headache,virus,5,5,5
+watering eyes,virus,5,5,5
+redness of skin,virus,5,5,5
+redness of skin,rash,6,5,5
+itchy,rash,6,6,5
+prickly,rash,5,5,5
+bumps,sumac rash,5,5,5
+blisters,sumac rash,5,5,5
+three-pronged leaf,poison ivy,5,5,10
+humidity,heat rash,5,5,5
+prolonged sweating,heat rash,5,5,5
+pink skin,heat rash,5,5,5
+dots on skin,heat rash,5,5,5
+tiny pimples,heat rash,5,5,5
+head,heat rash,3,3,5
+neck,heat rash,3,3,5
+shoulders,heat rash,3,3,5
+blisters,heat rash,5,5,5
+blood,open wound,5,9,5
+water,waterborne disease,6,6,6
+mouth,dental,6,6,6
+teeth,dental,7,6,10
+tooth,dental,7,6,10
+bite,bite,8,7,10
+bug,bug bite,5,8,5
+insect,bug bite,5,8,8
+itchy,bug bite,5,5,5
+stinging,bug bite,5,5,5
+raised skin,bug bite,5,5,5
+mosquito,mosquito bite,7,7,10
+snake,snake or lizard bite,5,5,5
+lizard,snake or lizard bite,7,7,10
+tingling,snake or lizard bite,5,5,5
+burning,snake or lizard bite,5,5,5
+pale skin,snake or lizard bite,5,5,5
+cold skin,snake or lizard bite,5,5,5
+numbness,snake or lizard bite,5,5,5
+unable to move limb,snake or lizard bite,5,5,5
+severe pain,snake or lizard bite,5,5,5
+nausea,snake or lizard bite,5,5,5
+vomiting,snake or lizard bite,5,5,5
+difficulty breathing,snake or lizard bite,5,5,5
+swelling,snake or lizard bite,5,5,5
+small welt,mosquito bite,5,5,5
+itchy sore,mosquito bite,5,5,5
+deep,severe cut,5,5,5
+excessive bleeding,severe cut,5,5,5
+sting,bee sting,5,8,7
+redness of skin,bee sting,5,5,5
+itchy,bee sting,5,5,5
+friction,skin chafing,5,5,5
+thighs,skin chafing,5,5,5
+armpit,skin chafing,5,5,5
+nipples,skin chafing,5,5,5
+butt,skin chafing,5,5,5
+confusion,heat exhaustion,5,5,5
+dark colored urine,heat exhaustion,5,5,8
+dizziness,heat exhaustion,5,5,5
+fatigue,heat exhaustion,5,5,5
+headache,heat exhaustion,5,5,5
+cramps,heat exhaustion,5,5,5
+vomiting,heat exhaustion,5,5,5
+diarrhea,heat exhaustion,5,5,5
+sweating,heat exhaustion,5,5,5
+increased heart rate,heat exhaustion,5,5,5
+pale skin,heat exhaustion,5,5,5
+thirsty,heat exhaustion,5,5,5
+goose bumps,heat exhaustion,5,5,5
+chills,heat exhaustion,5,5,5
+nausea,heat exhaustion,5,5,5
+unsteadiness,heat exhaustion,5,5,5
+thirsty,heat exhaustion,5,5,5
+itching,anaphylaxis,5,5,5
+redness of skin,anaphylaxis,5,5,5
+hives,anaphylaxis,5,5,5
+scratchy throat,anaphylaxis,5,5,5
+dry mouth,anaphylaxis,5,5,5
+shortness of breath,anaphylaxis,5,5,5
+wheezing,anaphylaxis,5,5,5
+dizziness,anaphylaxis,5,5,5
+weakness,anaphylaxis,5,5,5
+pale skin,anaphylaxis,5,5,5
+cool skin,anaphylaxis,5,5,5
+clammy skin,anaphylaxis,5,5,5
+diarrhea,giardia,5,5,5
+gas,giardia,5,5,5
+abdominal cramps.,giardia,5,5,5
+nausea,giardia,5,5,5
+dehydration,giardia,5,5,5
+weight loss,giardia,5,5,5
+rodent,bubonic plague,5,3,7
+insect,bubonic plague,5,5,5
+fever,bubonic plague,5,5,5
+headache,bubonic plague,5,5,5
+chills,bubonic plague,5,5,5
+weakness,bubonic plague,5,5,5
+swollen lymph glands,bubonic plague,5,4,5
+tender lymph glands,bubonic plague,5,4,5
+pneumonia,bubonic plague,5,5,5
+chest pain,bubonic plague,5,5,5
+bloody sputum,bubonic plague,5,2,5
+bubble,blister,5,5,6
+sore,blister,5,5,5
+think skin,blister,5,5,5
+yellow skin,blister,5,5,5
+white skin,blister,5,5,5
+sensitivity,blister,5,5,5
+black,bruise,5,5,5
+blue,bruise,5,5,5
+sensitivity,bruise,5,5,5
+inflammation,bruise,5,5,5
+toothache,broken tooth,5,4,5
+sensitivity,broken tooth,5,5,5
+break,broken tooth,5,5,5
+watering eyes,snow blindness,5,5,5
+bloodshot eyes,snow blindness,5,5,5
+eyelid twitching,snow blindness,5,5,5
+eye pain,snow blindness,5,5,5
+eye,snow blindness,5,5,5
+swelling,snow blindness,5,5,5
+headache,snow blindness,5,5,5
+blurred vision,snow blindness,5,5,5
+sensitivity to light,snow blindness,5,4,6
+stiff neck,lyme disease,5,5,5
+chills,lyme disease,5,5,5
+fever,lyme disease,5,5,5
+swollen lymph nodes,lyme disease,5,5,5
+headaches,lyme disease,5,5,5
+fatigue,lyme disease,5,5,5
+skin rash,lyme disease,5,5,5
+arthritis,lyme disease,5,5,5
+tick,lyme disease,5,5,5
+muscle aches,lyme disease,5,5,5
+joint pain,lyme disease,5,5,5
+rash,lyme disease,5,5,5
+sharp pain,appendicitis,5,5,7
+right side,appendicitis,5,6,7
+dull pain,appendicitis,5,5,5
+upper abdomen,appendicitis,5,5,5
+lower abdomen,appendicitis,5,5,5
+nausea,appendicitis,5,5,5
+vomiting,appendicitis,5,5,5
+abdominal swelling,appendicitis,5,5,5
+high temperature,appendicitis,5,5,5
+constipation,appendicitis,5,5,5
+diarrhea,appendicitis,5,5,5
+gas,appendicitis,5,5,5
+inability to pass gas,appendicitis,5,2,5
+painful urination,appendicitis,5,3,5
+loss of appetite,appendicitis,5,5,5
+fever,necrotizing fasciitis,5,5,5
+chils,necrotizing fasciitis,5,5,5
+infection,necrotizing fasciitis,5,5,5
+extremity,necrotizing fasciitis,5,5,5
+wound,necrotizing fasciitis,5,5,5
+redness,necrotizing fasciitis,5,5,5
+swelling,necrotizing fasciitis,5,5,5
+sensitive to pain,necrotizing fasciitis,5,5,5
+skin ulceration,necrotizing fasciitis,5,5,5
+blisters,necrotizing fasciitis,5,5,5
+scars,necrotizing fasciitis,5,5,5
+gas formation in tissues,necrotizing fasciitis,5,5,5
+fluid rapidly draining from site,necrotizing fasciitis,5,5,5
+shaking chills,malaria,5,5,5
+high fever,malaria,5,5,5
+profuse sweating,malaria,5,5,5
+headache,malaria,5,5,5
+nausea,malaria,5,5,5
+vomiting,malaria,5,5,5
+diarrhea,malaria,5,5,5
+anemia,malaria,5,5,5
+muscle pain,malaria,5,5,5
+convulsions,malaria,5,5,5
+coma,malaria,5,5,5
+bloody stool,malaria,5,5,5
+shivering,mild hypothermia,5,6,5
+drowsy,severe hypothermia,5,5,5
+unconscious,severe hypothermia,7,3,6
+low body temperature,hypothermia,8,8,8
+low circulation,frostbite,5,5,5
+pale skin,frostbite,5,5,5
+itchy,frostbite,5,5,5
+pain,frostbite,5,5,5
+sensitivity,frostbite,5,5,5
+blistering,frostbite,5,5,5
+discoloring,frostbite,5,5,5
+black skin,frostbite,5,5,5
+waxy skin,frostbite,5,5,5
+blood loss,hypovolemic shock,5,5,5
+bleeding,hypovolemic shock,5,5,5
+internal bleeding,hypovolemic shock,5,5,5
+anxiety,hypovolemic shock,5,5,5
+cool skin,hypovolemic shock,5,5,5
+clammy skin,hypovolemic shock,5,5,5
+confusion,hypovolemic shock,5,5,5
+pale skin color,hypovolemic shock,5,5,5
+rapid breathing,hypovolemic shock,5,5,5
+sweating,hypovolemic shock,5,5,5
+moist skin,hypovolemic shock,5,5,5
+unconsiousness,hypovolemic shock,5,5,5
+decreased urine,hypovolemic shock,5,5,5
+no urine,hypovolemic shock,5,5,5
+general weakness,hypovolemic shock,5,5,5
+headache,subdural hematoma,5,5,5
+confusion,subdural hematoma,5,5,5
+change in behavior,subdural hematoma,5,5,5
+dizziness,subdural hematoma,5,5,5
+nausea,subdural hematoma,5,5,5
+vomiting,subdural hematoma,5,5,5
+lethargy,subdural hematoma,5,5,5
+excessive drowsiness,subdural hematoma,5,5,5
+apathy,subdural hematoma,5,5,5
+seizures,subdural hematoma,5,5,5
+breathing difficulty,asphyxia,5,5,5
+rapid pulse,asphyxia,5,5,5
+high blood pressure,asphyxia,5,5,5
+cyanosis,asphyxia,5,5,5
+convulsions,asphyxia,5,5,5
+paralysis ,asphyxia,3,2,6
+coma,asphyxia,5,5,5
+cough,smoke inhalation,5,5,5
+shortness of breath,smoke inhalation,5,5,5
+hoarseness,smoke inhalation,5,5,5
+headache,smoke inhalation,5,5,5
+changes in mental status,smoke inhalation,5,2,6
+noisy breathing,smoke inhalation,5,5,5
+soot,smoke inhalation,5,5,5
+irritated eyes,smoke inhalation,5,5,5
+swollen nostrils,smoke inhalation,5,5,5
+headache,altitude sickness,5,7,5
+loss of appetite,altitude sickness,5,5,5
+nausea,altitude sickness,5,5,5
+drowsiness,altitude sickness,5,5,5
+weak muscles,altitude sickness,5,5,5
+dizziness,altitude sickness,5,5,5
+confusion,severe altitude sickness,5,5,5
+feeling faint,severe altitude sickness,5,5,5
+blue,severe altitude sickness,5,5,5
+grey,severe altitude sickness,5,5,5
+lips,severe altitude sickness,5,5,5
+fingernails,severe altitude sickness,5,5,5
+cool arms,septic shock,5,6,6
+cool legs,septic shock,5,6,6
+pale arms,septic shock,5,6,6
+pale legs,septic shock,5,6,6
+high temperature,septic shock,5,5,5
+low temperature,septic shock,5,5,5
+chills,septic shock,5,5,5
+light-headedness,septic shock,5,5,5
+little urine,septic shock,5,5,5
+no urine,septic shock,5,5,5
+low blood pressure,septic shock,5,6,5
+rapid heart rate,septic shock,5,7,5
+palpitations,septic shock,5,5,5
+restlessness,septic shock,5,5,5
+agitation,septic shock,5,5,5
+lethargy,septic shock,5,5,5
+confusion,septic shock,5,5,5
+shortness of breath,septic shock,5,5,5
+skin rash,septic shock,5,5,5
+skin discoloration,septic shock,5,5,5
+hives,allergic reaction,5,5,5
+itching,allergic reaction,5,7,5
+nasal congestion,allergic reaction,5,5,5
+rash,allergic reaction,5,6,5
+watery eyes,allergic reaction,5,5,5
+itchy eyes,allergic reaction,5,5,5
+difficulty breathing,severe allergic reaction,5,5,5
+severe discomfort,severe allergic reaction,5,5,5
+difficulty breathing at rest,pulmonary edema from high altitude (HAPE),5,5,5
+dyspnea,pulmonary edema from high altitude (HAPE),5,5,5
+cough,pulmonary edema from high altitude (HAPE),5,5,5
+weakness,pulmonary edema from high altitude (HAPE),5,5,5
+decreased exercise performance,pulmonary edema from high altitude (HAPE),5,2,5
+chest tightness,pulmonary edema from high altitude (HAPE),5,5,5
+congestion,pulmonary edema from high altitude (HAPE),5,5,5
+wheezing,pulmonary edema from high altitude (HAPE),5,5,5
+blue skin color,pulmonary edema from high altitude (HAPE),5,2,5
+rapid shallow breathing,pulmonary edema from high altitude (HAPE),5,5,5
+rapid heart rate,pulmonary edema from high altitude (HAPE),5,5,5
+fever,rabies,5,5,5
+headache,rabies,5,5,5
+nausea,rabies,5,5,5
+vomiting,rabies,5,5,5
+agitation,rabies,5,5,5
+anxiety,rabies,5,5,5
+confusion,rabies,5,5,5
+hyperactivity,rabies,5,5,5
+difficulty swallowing,rabies,5,5,5
+excessive salivation,rabies,5,5,8
+fear of water,rabies,5,1,9
+hallucinations,rabies,5,5,5
+insomnia,rabies,5,5,5
+partial paralysis,rabies,5,5,5
+pain,spider bite,5,5,5
+cramping,spider bite,5,5,5
+sweating,spider bite,5,5,5
+abdomenal pain,spider bite,5,5,5
+chest pain,spider bite,5,5,5
+spider,spider bite,7,7,10
