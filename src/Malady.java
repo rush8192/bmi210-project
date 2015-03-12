@@ -56,14 +56,19 @@ public class Malady extends OntClass {
     
     public String getTreatments() {
         String treatments = "";
+        String emergency = null;
         Set<OntClass> current = new HashSet<OntClass>();
         current.add(this);
         while (true) {
             Set<OntClass> next = new HashSet<OntClass>();
             for (OntClass classObj : current) {
                 Malady malady = (Malady)classObj;
-                if (malady.treatment != null && !"".equals(malady.treatment))
-                    treatments += " " + malady.treatment + ",";
+                if (malady.treatment != null && !"".equals(malady.treatment)) {
+                    if (malady.treatment.contains("Call 911 immediately.")) {
+                        emergency = malady.treatment;
+                    } else 
+                        treatments += " " + malady.treatment + ",";
+                }
                 next.addAll(malady.getParents());
             }
             // root's only parent is itself, so if next==current we have
@@ -75,7 +80,7 @@ public class Malady extends OntClass {
         }
         if (treatments.length() > 0 && treatments.charAt(treatments.length() - 1) == ',')
             treatments = treatments.substring(0, treatments.length() - 1);
-        return treatments;
+        return emergency == null ? treatments : emergency + " In the meantime: " + treatments;
     }
     
     Set<Symptom> inheritedSymptoms() {

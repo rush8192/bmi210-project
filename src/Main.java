@@ -1,6 +1,8 @@
 
 import java.util.*;
 
+// Contains the primary logic for our program; loads the ontology from several
+// files, then allows the user to repeatedly query our ontology with symptoms
 public class Main {
 
     public static final int NUM_MATCHES = 5;
@@ -36,11 +38,13 @@ public class Main {
 			    System.out.println("");
 			    List<MaladyMatch> matches = maladyOntology.getTopMatches(queryTerms, 5);
 			    System.out.println("Top match is: " + matches.get(0).malady.getClassName());
+			    
+			    // refine matches as needed
                 while (!aboveThreshold(matches.get(0), matches.get(1))) {
                     System.out.println("Second match is: " + matches.get(1).malady.getClassName());
                     System.out.println("Refining matches...");
                     List<MaladyMatch> refined = refineMatches(matches);
-                    if (refined == null) {
+                    if (refined == null) { // no more symptoms to query
                         System.out.println("CAUTION: unable to disambiguate between maladies with high confidence");
                         break;
                     }

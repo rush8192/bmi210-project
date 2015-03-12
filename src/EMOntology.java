@@ -2,6 +2,9 @@
 import java.io.*;
 import java.util.*;
 
+// Defines the primary ontology used by our program.Consists of a root
+// node that is subclasses by a series of increasingly specific maladies,
+// each of which may have 0..N symptoms and 0..1 treatment.
 public class EMOntology extends Ontology {
     
     public static final String ROOT_CLASS = "root";

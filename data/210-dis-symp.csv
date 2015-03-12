@@ -32,7 +32,7 @@ painless,fourth-degree burn,5,5,5
 blackened skin,fourth-degree burn,5,5,5
 nausea,poisoning,5,5,5
 drowsiness,poisoning,5,5,5
-adominal pain,chemical poisoning,5,5,5
+abdominal pain,chemical poisoning,5,5,5
 shortness of breath,chemical poisoning,5,5,5
 eye irritation,chemical poisoning,5,2,5
 headache,chemical poisoning,5,5,5
@@ -44,7 +44,7 @@ fever,salmonella poisoning,5,5,5
 abdominal cramps,salmonella poisoning,5,5,5
 dehydration,salmonella poisoning,5,5,5
 plant,botanical poisoning,8,8,8
-ingest,hemlock poisoning,5,5,5
+ingest,botanical poisoning internal,5,5,5
 increased saliva,hemlock poisoning,5,5,5
 burning of digestive tract,hemlock poisoning,5,5,5
 muscle pain,hemlock poisoning,5,5,5
@@ -53,7 +53,6 @@ muscle stiffening,hemlock poisoning,5,5,5
 paralysis,hemlock poisoning,5,5,5
 loss of speech,hemlock poisoning,5,5,6
 cherry,wild cherry poisoning,8,8,8
-ingest,wild cherry poisoning,5,5,5
 gasping,wild cherry poisoning,5,5,5
 excited,wild cherry poisoning,5,5,5
 increased heart rate,wild cherry poisoning,5,5,5
@@ -61,15 +60,14 @@ prostration,wild cherry poisoning,5,5,5
 seed,moonseed poisoning,7,7,5
 blue lips,moonseed poisoning,5,5,5
 purple lips,moonseed poisoning,5,5,5
-berries,mistle toe poisoning,5,5,5
-ingest,mistle toe poisoning,5,5,5
+berries,mistletoe poisoning,5,5,5
 bright colors,mushroom poisoning,5,5,5
 mushroom,mushroom poisoning,8,8,8
 bad taste,mushroom poisoning,5,5,5
 stomach ache,mushroom poisoning,5,5,5
 vomiting,mushroom poisoning,5,5,5
 nausea,mushroom poisoning,5,5,5
-fatigue ,cardiac arrest,5,5,5
+fatigue,cardiac arrest,5,5,5
 chest pain,cardiac arrest,8,8,10
 drowsiness,cardiac arrest,5,5,5
 dizziness,cardiac arrest,5,5,5
@@ -108,7 +106,7 @@ lower,broken fibula,5,5,5
 extreme coldness,virus,5,5,5
 fever,virus,5,5,5
 cough,virus,5,5,5
-nausal congestion,virus,5,5,5
+nasal congestion,virus,5,5,5
 fatigue,virus,5,5,5
 headache,virus,5,5,5
 watering eyes,virus,5,5,5
@@ -289,6 +287,17 @@ shivering,mild hypothermia,5,6,5
 drowsy,severe hypothermia,5,5,5
 unconscious,severe hypothermia,7,3,6
 low body temperature,hypothermia,8,8,8
+slow breathing,hypothermia,5,5,5
+mood changes,hypothermia,5,5,5
+irritability,hypothermia,5,5,5
+poor coordination,hypothermia,5,5,5
+confusion,mild hypothermia,5,5,5
+slurred speech,hypothermia,5,5,5
+decreased blood pressure,severe hypothermia,5,5,5
+decreased heart rate,severe hypothermia,5,5,5
+decreased respiratory rate,severe hypothermia,5,5,5
+vasoconstriction,mild hypothermia,5,5,5
+hypertension,mild hypothermia,5,5,5
 low circulation,frostbite,5,5,5
 pale skin,frostbite,5,5,5
 itchy,frostbite,5,5,5
@@ -309,7 +318,7 @@ pale skin color,hypovolemic shock,5,5,5
 rapid breathing,hypovolemic shock,5,5,5
 sweating,hypovolemic shock,5,5,5
 moist skin,hypovolemic shock,5,5,5
-unconsiousness,hypovolemic shock,5,5,5
+unconsciousness,hypovolemic shock,5,5,5
 decreased urine,hypovolemic shock,5,5,5
 no urine,hypovolemic shock,5,5,5
 general weakness,hypovolemic shock,5,5,5
@@ -328,7 +337,7 @@ rapid pulse,asphyxia,5,5,5
 high blood pressure,asphyxia,5,5,5
 cyanosis,asphyxia,5,5,5
 convulsions,asphyxia,5,5,5
-paralysis ,asphyxia,3,2,6
+paralysis,asphyxia,3,2,6
 coma,asphyxia,5,5,5
 cough,smoke inhalation,5,5,5
 shortness of breath,smoke inhalation,5,5,5
@@ -358,7 +367,7 @@ pale legs,septic shock,5,6,6
 high temperature,septic shock,5,5,5
 low temperature,septic shock,5,5,5
 chills,septic shock,5,5,5
-light-headedness,septic shock,5,5,5
+lightheadedness,septic shock,5,5,5
 little urine,septic shock,5,5,5
 no urine,septic shock,5,5,5
 low blood pressure,septic shock,5,6,5
@@ -407,6 +416,6 @@ partial paralysis,rabies,5,5,5
 pain,spider bite,5,5,5
 cramping,spider bite,5,5,5
 sweating,spider bite,5,5,5
-abdomenal pain,spider bite,5,5,5
+chills,spider bite,5,5,5
 chest pain,spider bite,5,5,5
 spider,spider bite,7,7,10
